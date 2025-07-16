@@ -1,0 +1,134 @@
+/* Make sure body takes full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Flexbox layout to push footer down */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Content wrapper grows to fill space */
+.main-content {
+    flex: 1;
+}
+
+/* Footer styling */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; /* Ensure footer sticks to bottom */
+}
+
+/* ===== Artwork Details Box ===== */
+.artwork-details-box {
+    background-color: #f8f9fa; /* light background */
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    height: 100%; /* make box fill height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Artwork description section */
+.artwork-description {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    max-height: 150px; /* constrain tall text */
+    overflow-y: auto;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Custom scrollbar for artwork description */
+.artwork-description::-webkit-scrollbar {
+    width: 5px;
+}
+.artwork-description::-webkit-scrollbar-thumb {
+    background: #adb5bd;
+    border-radius: 4px;
+}
+/* 🌸 Artwork card style with lavender glow and lift */
+.artwork-card {
+    border: 2px solid #e6e6fa; /* Light lavender border */
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.artwork-card:hover {
+    transform: translateY(-10px) scale(1.03); /* Lift & slightly scale */
+    box-shadow: 0 15px 30px rgba(221, 160, 221, 0.5); /* Lavender glow */
+    border-color: #dda0dd; /* Brighter lavender border */
+    cursor: pointer;
+}
+.artwork-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.artwork-card:nth-child(1) { animation-delay: 0.1s; }
+.artwork-card:nth-child(2) { animation-delay: 0.2s; }
+.artwork-card:nth-child(3) { animation-delay: 0.3s; }
+.artwork-card:nth-child(4) { animation-delay: 0.4s; }
+.artwork-card:nth-child(5) { animation-delay: 0.5s; }
+.artwork-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.artwork-card img {
+    transition: transform 0.5s ease;
+}
+
+.artwork-card:hover img {
+    transform: scale(1.05); /* Subtle zoom on image */
+}
+
+/* ===== General Description Box ===== */
+.description-box {
+    background-color: #f8f9fa; /* light gray box */
+    border: 1px solid #dee2e6; /* subtle border */
+    border-radius: 8px; /* rounded corners */
+    max-height: 200px; /* fixed height for long text */
+    overflow-y: auto; /* add scroll for long text */
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* soft shadow */
+    font-size: 1rem; /* medium font size */
+    line-height: 1.6; /* improve readability */
+}
+.artwork-description {
+    max-height: 300px; /* increased */
+    overflow-y: auto;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+/* Custom scrollbar for description box */
+.description-box::-webkit-scrollbar {
+    width: 6px;
+}
+.description-box::-webkit-scrollbar-thumb {
+    background: #adb5bd;
+    border-radius: 4px;
+}
+#cart-count {
+    transition: all 0.3s ease;
+}
